@@ -5,7 +5,7 @@ import datetime as dt
 from time import sleep
 
 #cascPath = ("C:/Users/wkeenan14/Documents/CHSTrafficCapstone/cars.xml")
-cascPath = ("C:/Users/WilliamHK/Documents/CHSTrafficCapstone/haarcascade_frontalface_default.xml")
+cascPath = ("C:/Users/WilliamHK/Documents/CHSTrafficCapstone/cars.xml")
 faceCascade = cv2.CascadeClassifier(cascPath)
 log.basicConfig(filename='webcam.log',level=log.INFO)
 
