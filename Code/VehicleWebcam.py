@@ -1,37 +1,53 @@
-# OpenCV Python program to detect cars in video frame
-# import libraries of python OpenCV 
 import cv2
-import numpy as np
-from PIL import Image
-  
-# capture frames from a video
-cap = cv2.VideoCapture('C:/Users/wkeenan14/Documents/CHSTrafficCapstone/Media/video.avi')
-  
-# Trained XML classifiers describes some features of some object we want to detect
-car_cascade = cv2.CascadeClassifier('C:/Users/wkeenan14/Documents/CHSTrafficCapstone/cars.xml')
-  
-# loop runs if capturing has been initialized.
-while True:
-    # reads frames from a video
-    ret, frames = cap.read()
-    #print(len(frames))  
-    # convert to gray scale of each frames
-    gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
-    blur = cv2.GaussianBlur(gray,(5,5),0)
+import sys
+import logging as log
+import datetime as dt
+from time import sleep
 
-    # Detects cars of different sizes in the input image
-    cars = car_cascade.detectMultiScale(blur, 1.1, 1)
-      
-    # To draw a rectangle in each cars
-    for (x,y,w,h) in cars:
-        cv2.rectangle(frames,(x,y),(x+w,y+h),(0,0,255),2)
-    
-   # Display frames in a window 
-    cv2.imshow('video', frames,)
-      
-# Wait for Esc key to stop
-    if cv2.waitKey(33) == 27:
+cascPath = ("C:/Users/wkeenan14/Documents/CHSTrafficCapstone/cars.xml")
+faceCascade = cv2.CascadeClassifier(cascPath)
+log.basicConfig(filename='webcam.log',level=log.INFO)
+
+video_capture = cv2.VideoCapture(0)
+anterior = 0
+
+while True:
+    if not video_capture.isOpened():
+        print('Unable to load camera.')
+        sleep(5)
+        pass
+
+    # Capture frame-by-frame
+    ret, frame = video_capture.read()
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    faces = faceCascade.detectMultiScale(
+        gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30)
+    )
+
+    # Draw a rectangle around the faces
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+    if anterior != len(faces):
+        anterior = len(faces)
+        log.info("faces: "+str(len(faces))+" at "+str(dt.datetime.now()))
+
+
+    # Display the resulting frame
+    cv2.imshow('Video', frame)
+
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-  
-# De-allocate any associated memory usage
+
+    # Display the resulting frame
+    cv2.imshow('Video', frame)
+
+# When everything is done, release the capture
+video_capture.release()
 cv2.destroyAllWindows()
