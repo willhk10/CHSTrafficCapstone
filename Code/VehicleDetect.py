@@ -42,3 +42,23 @@ cv2.drawContours(dmy, valid_cntrs, -1, (127,200,0), 2)
 cv2.line(dmy, (0, 80),(256,80),(100, 255, 255))
 plt.imshow(dmy)
 plt.show()
+
+files.sort(key=lambda f: int(re.sub('\C:', '', f)))
+
+for i in range(len(files)):
+    filename=pathIn + files[i]
+    
+    #read frames
+    img = cv2.imread(filename)
+    height, width, layers = img.shape
+    size = (width,height)
+    
+    #inserting the frames into an image array
+    frame_array.append(img)
+out = cv2.VideoWriter(pathOut,cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
+
+for i in range(len(frame_array)):
+    # writing to a image array
+    out.write(frame_array[i])
+
+out.release()
