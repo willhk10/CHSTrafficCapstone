@@ -1,7 +1,8 @@
 # OpenCV Python program to detect cars in video frame
 # import libraries of python OpenCV 
 import cv2
-import numpy
+import numpy as np
+from PIL import Image
   
 # capture frames from a video
 cap = cv2.VideoCapture('C:/Users/wkeenan14/Documents/CHSTrafficCapstone/Media/video.avi')
@@ -13,14 +14,14 @@ car_cascade = cv2.CascadeClassifier('C:/Users/wkeenan14/Documents/CHSTrafficCaps
 while True:
     # reads frames from a video
     ret, frames = cap.read()
-
     #print(len(frames))  
     # convert to gray scale of each frames
     gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
-      
+    blur = cv2.GaussianBlur(gray,(5,5),0)
+    dilated = cv2.dilate(frames, cv2.dilate(blur,np.ones((3,3))))
   
     # Detects cars of different sizes in the input image
-    cars = car_cascade.detectMultiScale(gray, 1.1, 1)
+    cars = car_cascade.detectMultiScale(gray, dilated, 1.1, 1)
       
     # To draw a rectangle in each cars
     for (x,y,w,h) in cars:
