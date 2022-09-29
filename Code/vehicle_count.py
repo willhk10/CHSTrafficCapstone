@@ -12,7 +12,7 @@ from Code.tracker import *
 tracker = EuclideanDistTracker()
 
 # Initialize the videocapture object
-cap = cv2.VideoCapture('video.mp4')
+cap = cv2.VideoCapture('"C:/Users/Wkeenan14/Videos/Dronefootage/9-23-2022_4-13-004.MP4"')
 input_size = 320
 
 # Detection confidence threshold
