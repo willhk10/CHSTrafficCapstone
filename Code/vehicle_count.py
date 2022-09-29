@@ -6,7 +6,7 @@ import cv2
 import csv
 import collections
 import numpy as np
-from tracker import *
+from Code.tracker import *
 
 # Initialize Tracker
 tracker = EuclideanDistTracker()
