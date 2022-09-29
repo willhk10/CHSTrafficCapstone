@@ -45,19 +45,23 @@ Use cumulative knowledge to solve an important issue.
   * Use drone to collect data
   * 
 ## Tentative schedule
-
+* Yes
 
 # Climate Survey results
+* Yes
 
 
 
 # Code
+* Yes
 
 
 
 # Traffic simulation plan
+* Yes
 
 
 # Documentation
 
-###
+### Week of Yes
+* 
