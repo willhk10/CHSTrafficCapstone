@@ -36,4 +36,5 @@ Use cumulative knowledge to solve an important issue.
 
 # To-Do
 * Gather data in morning and afternoon
+  * Use drone to collect data
   * 
