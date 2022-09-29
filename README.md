@@ -1,6 +1,12 @@
 # TrafficControl
 2022-2023 Capstone Engineering Project. 
 
+## Table of Contents
+* [Scheduled work](#documentation)
+* [Code](#Code)
+
+
+
 ### Task:
 Use cumulative knowledge to solve an important issue.
 
@@ -9,7 +15,7 @@ Use cumulative knowledge to solve an important issue.
 # Planning
 <ln>
   
-## Initial ideas:
+## Outline of project
 *  Research the traffic patterns and issues around Charlottesville High School.
     * Use various data collection methods
       * drone footage
@@ -38,3 +44,20 @@ Use cumulative knowledge to solve an important issue.
 * Gather data in morning and afternoon
   * Use drone to collect data
   * 
+## Tentative schedule
+
+
+# Climate Survey results
+
+
+
+# Code
+
+
+
+# Traffic simulation plan
+
+
+# Documentation
+
+###
