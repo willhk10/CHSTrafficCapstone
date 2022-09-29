@@ -32,5 +32,8 @@ Use cumulative knowledge to solve an important issue.
 ## Risk Mitigation
 * Our project is pretty low risk
 * Keeping drone at safe height, no higher than 120m
+* No lower than 60m
 
-
+# To-Do
+* Gather data in morning and afternoon
+  * 
