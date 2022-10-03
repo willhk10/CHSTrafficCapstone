@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
   
 # capture frames from a video
-cap = cv2.VideoCapture('C:/Users/wkeenan14/Documents/CHSTrafficCapstone/Media/video.avi')
+cap = cv2.VideoCapture('C:/Users/wkeenan14/Videos/Dronefootage/Morning9-30/Morning9.30.mp4')
   
 # Trained XML classifiers describes some features of some object we want to detect
 car_cascade = cv2.CascadeClassifier('C:/Users/wkeenan14/Documents/CHSTrafficCapstone/cars.xml')
