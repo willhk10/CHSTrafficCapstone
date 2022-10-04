@@ -6,13 +6,13 @@ import cv2
 import csv
 import collections
 import numpy as np
-from Code.tracker import *
+from tracker import *
 
 # Initialize Tracker
 tracker = EuclideanDistTracker()
 
 # Initialize the videocapture object
-cap = cv2.VideoCapture('"C:/Users/Wkeenan14/Videos/Dronefootage/9-23-2022_4-13-004.MP4"')
+cap = cv2.VideoCapture('C:/Users/wkeenan14/Videos/Dronefootage/Morning9-30/Morning9.30.mp4')
 input_size = 320
 
 # Detection confidence threshold
@@ -30,7 +30,7 @@ down_line_position = middle_line_position + 15
 
 
 # Store Coco Names in a list
-classesFile = "coco.names"
+classesFile = "C:/Users/wkeenan14/Documents/CHSTrafficCapstone/Etcstuff/coco.names"
 classNames = open(classesFile).read().strip().split('\n')
 print(classNames)
 print(len(classNames))
@@ -41,8 +41,8 @@ required_class_index = [2, 3, 5, 7]
 detected_classNames = []
 
 ## Model Files
-modelConfiguration = 'yolov3-320.cfg'
-modelWeigheights = 'yolov3-320.weights'
+modelConfiguration = 'C:/Users/wkeenan14/Documents/CHSTrafficCapstone/yolov3-320.cfg'
+modelWeigheights = 'C:/Users/wkeenan14/Documents/CHSTrafficCapstone/yolov3-320.weights'
 
 # configure the network model
 net = cv2.dnn.readNetFromDarknet(modelConfiguration, modelWeigheights)
@@ -62,6 +62,7 @@ def find_center(x, y, w, h):
     x1=int(w/2)
     y1=int(h/2)
     cx = x+x1
+    print("finding center")
     cy=y+y1
     return cx, cy
     
@@ -75,7 +76,7 @@ down_list = [0, 0, 0, 0]
 def count_vehicle(box_id, img):
 
     x, y, w, h, id, index = box_id
-
+    print("counting vehicles")
     # Find the center of the rectangle for detection
     center = find_center(x, y, w, h)
     ix, iy = center
@@ -119,7 +120,7 @@ def postProcess(outputs,img):
             confidence = scores[classId]
             if classId in required_class_index:
                 if confidence > confThreshold:
-                    # print(classId)
+                    print(classId)
                     w,h = int(det[2]*width) , int(det[3]*height)
                     x,y = int((det[0]*width)-w/2) , int((det[1]*height)-h/2)
                     boxes.append([x,y,w,h])
@@ -129,10 +130,13 @@ def postProcess(outputs,img):
     # Apply Non-Max Suppression
     indices = cv2.dnn.NMSBoxes(boxes, confidence_scores, confThreshold, nmsThreshold)
     # print(classIds)
-    for i in indices.flatten():
-        x, y, w, h = boxes[i][0], boxes[i][1], boxes[i][2], boxes[i][3]
-        # print(x,y,w,h)
-
+    # Apply Non-Max Suppression
+    indices = cv2.dnn.NMSBoxes(boxes, confidence_scores, confThreshold, nmsThreshold)
+    # print(classIds)
+    if len(indices) > 0:
+        for i in indices.flatten():
+            x, y, w, h = boxes[i][0], boxes[i][1], boxes[i][2], boxes[i][3]
+            print(x,y,w,h)
         color = [int(c) for c in colors[classIds[i]]]
         name = classNames[classIds[i]]
         detected_classNames.append(name)
@@ -152,6 +156,7 @@ def postProcess(outputs,img):
 
 def realTime():
     while True:
+        print("Real time")
         success, img = cap.read()
         img = cv2.resize(img,(0,0),None,0.5,0.5)
         ih, iw, channels = img.shape
@@ -202,8 +207,8 @@ def realTime():
     cap.release()
     cv2.destroyAllWindows()
 
-
-image_file = 'vehicle classification-image02.png'
+'''
+image_file = 'C:/Users/wkeenan14/Documents/CHSTrafficCapstone/media/frames/1.png'
 def from_static_image(image):
     img = cv2.imread(image)
 
@@ -243,3 +248,4 @@ def from_static_image(image):
 if __name__ == '__main__':
     # realTime()
     from_static_image(image_file)
+    '''
