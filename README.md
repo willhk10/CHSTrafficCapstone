@@ -68,3 +68,6 @@ Use cumulative knowledge to solve an important issue.
 * Took drone video of morning traffic flow
 * One issue that we are running in to is deciding which simulation software to use and learning how to use it. The programs that we have found so far have either not had the right traffic tools (Anylogic) or been very opaque and hard to learn (SUMO)
 * Currently researching VISSIM, which could be a better balance of ease of use and applicability
+
+### Week 7: 10/3/22
+* C:/Users/Appdata/Local/Programs/Python/Python310/Lib/site-packages/labelImg
