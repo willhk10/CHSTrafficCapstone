@@ -63,5 +63,8 @@ Use cumulative knowledge to solve an important issue.
 
 # Documentation
 
-### 9.25.22
-* worked on the things
+### Week 6: 9/25/22
+* Looked at last Friday's afternoon traffic video, tried to apply computer vision, but ran in to some problems. Also, this video starts at 3:59, which is after many people have been dismissed and already left the building
+* Took drone video of morning traffic flow
+* One issue that we are running in to is deciding which simulation software to use and learning how to use it. The programs that we have found so far have either not had the right traffic tools (Anylogic) or been very opaque and hard to learn (SUMO)
+* Currently researching VISSIM, which could be a better balance of ease of use and applicability
