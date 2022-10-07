@@ -73,3 +73,9 @@ Use cumulative knowledge to solve an important issue.
 * C:/Users/Appdata/Local/Programs/Python/Python310/Lib/site-packages/labelImg
 * https://pypi.org/project/labelImg/
 * important lonks^
+* Worked on finding simulation softwares. Went through multiple different ones, until we found one that accurately represents data, is easy to use, and does not have a time limit on simulation time.
+* Worked on Computer vision Software, explored LabelImg, Anaconda, lxml, virtual environments, and other labeling stuff. 
+* LabelImg program does not work in Python 3.10, had to fix float and int
+* Learned a lot about training a model for computer vision
+* Discussed a lot of potential solutions to simulation problems
+* Next week will hopefully have a working model completed by Friday. 
