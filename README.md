@@ -71,3 +71,5 @@ Use cumulative knowledge to solve an important issue.
 
 ### Week 7: 10/3/22
 * C:/Users/Appdata/Local/Programs/Python/Python310/Lib/site-packages/labelImg
+* https://pypi.org/project/labelImg/
+* important lonks^
