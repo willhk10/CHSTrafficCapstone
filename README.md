@@ -54,8 +54,11 @@ Use cumulative knowledge to solve an important issue.
 
 # Code
 * There is so much code.
-* 
-
+* I will explain the code when i understand the code.
+* However, we did get some facial recognition and vehicle recognition working.
+<img src="https://github.com/willhk10/CHSTafficCapstone/Media/millerni.png" alt="alt text" width="600" height="500">
+<br/>
+look! little squares!
 
 
 # Traffic simulation plan
