@@ -83,3 +83,9 @@ look! little squares!
 * Learned a lot about training a model for computer vision
 * Discussed a lot of potential solutions to simulation problems
 * Next week will hopefully have a working model completed by Friday. 
+
+
+
+### Week 8: 10/10/22
+* https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+* this hurts
