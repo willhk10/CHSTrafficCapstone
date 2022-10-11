@@ -89,3 +89,7 @@ look! little squares!
 ### Week 8: 10/10/22
 * https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 * this hurts
+* predefined path class file - "C:\Users\wkeenan14\Documents\CHSTrafficCapstone\predefined_classes.txt"
+* image_path -
+"C:\Users\wkeenan14\Documents\CHSTrafficCapstone\data\images\train"
+
