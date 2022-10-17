@@ -92,4 +92,7 @@ look! little squares!
 * predefined path class file - "C:\Users\wkeenan14\Documents\CHSTrafficCapstone\predefined_classes.txt"
 * image_path -
 "C:\Users\wkeenan14\Documents\CHSTrafficCapstone\data\images\train"
-
+* Figured out how to define right of way at each intersection in VISSIM using conflict areas and priority rules
+* Learned how to create pedestrian areas and routes
+* Had trouble making pedestrians interact with vehicles
+* Next week I will try to model the pedestrian-vehicle interactions and learn how to measure traffic flow in the simulation
