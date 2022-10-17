@@ -1,0 +1,3 @@
+﻿                  Warning	Simulation second 407.50: After 60.00 seconds of waiting for lane change the vehicle 133 (on Static Vehicle Route 4 - 1) was removed from link "8" at position 147.848 ft.	Network object type: Vehicle	Network object keys: 133
+                  Warning	Vehicle input 1: StudentLotIn could not be finished completely (remain: 766 vehicles).	Network object type: Vehicle Input	Network object keys: 1
+                  Warning	Vehicle input 2: StaffLotIn could not be finished completely (remain: 6 vehicles).	Network object type: Vehicle Input	Network object keys: 2
