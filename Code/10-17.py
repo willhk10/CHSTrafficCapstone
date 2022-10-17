@@ -37,7 +37,7 @@ annotation_text.close()
 
 def xml_to_csv(path):
     xml_list = []
-    for xml_file in glob.glob(path + '/*.xml'):
+    for xml_file in glob.glob(path + '../CHSTrafficCapstone/data/images/train/*.xml'):
         tree = ET.parse(xml_file)
         root = tree.getroot()
         for member in root.findall('object'):
