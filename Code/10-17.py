@@ -57,7 +57,7 @@ def xml_to_csv(path):
 
 # apply xml_to_csv() function to convert all XML files in images/ folder into labels.csv
 labels_df = xml_to_csv('../CHSTrafficCapstone/data/images/train/')
-labels_df.to_csv(('labels2?.csv'), index=None)
+labels_df.to_csv(('labels2.csv'), index=None)
 print('Successfully converted xml to csv.')
 
 #in previuos cell we also put all annotation in labels_df
