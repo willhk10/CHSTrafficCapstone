@@ -6,9 +6,10 @@ import xml.etree.ElementTree as ET
 
 def xml_to_csv(path):
     xml_list = []
-    for xml_file in glob.glob(path + '../CHSTrafficCapstone/data/images/train/*.xml'):
+    for xml_file in glob.glob('../CHSTrafficCapstone/data/images/train/*.xml'):
         tree = ET.parse(xml_file)
         root = tree.getroot()
+        print(root)
         for member in root.findall('object'):
             value = (root.find('filename').text,
                      int(root.find('size')[0].text),
@@ -19,14 +20,18 @@ def xml_to_csv(path):
                      int(member[4][2].text),
                      int(member[4][3].text)
                      )
+            print("value", value)
             xml_list.append(value)
     column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
     xml_df = pd.DataFrame(xml_list, columns=column_name)
+    print(xml_df)
+    print(xml_list)
     return xml_df
 
 
 def main():
     image_path = os.path.join(os.getcwd(), 'annotations')
+    print("im_path,",image_path)
     print('annotated')
     xml_df = xml_to_csv(image_path)
     xml_df.to_csv('carlabels.csv', index=None)
