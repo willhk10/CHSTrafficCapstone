@@ -96,3 +96,9 @@ look! little squares!
 * Learned how to create pedestrian areas and routes
 * Had trouble making pedestrians interact with vehicles
 * Next week I will try to model the pedestrian-vehicle interactions and learn how to measure traffic flow in the simulation
+
+### Week 9: 10/17/22
+* Realized that my edits to the traffic simulation hadn't been saving since I was using the demo version, which doesn't allow saving or making changes to files, instead of the student version
+* Took video of afternoon traffic conditions at the parent pick up line
+* We realized that the scope of our project is far outside what is possible given the amount of time and power we have; the traffic flows well enough inside the school's campus, only being bottlenecked by the two intersections that cars can leave from. A roundabout could maybe improve this, but making a change that drastic wouldn't be reasonable to expect as the outcome of our project.
+* Next week we will hopefuly come up with and flesh out an aidea for a new project
